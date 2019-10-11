@@ -16,6 +16,7 @@ class IndexController
             <body>
                 <p>Hi! Use one of my functions to get dynamic, read-only data!</p>
                 <a href="/random">Array of random numbers.</a> You can add an extra number at the end for how many do you need. The default value is 10.
+                <a href="/password">Generated password</a>
             </body>
         </html>');
     }
