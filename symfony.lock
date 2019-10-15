@@ -50,6 +50,9 @@
             "./config/packages/sensio_framework_extra.yaml"
         ]
     },
+    "symfony/asset": {
+        "version": "v4.3.5"
+    },
     "symfony/cache": {
         "version": "v4.3.5"
     },
@@ -105,6 +108,9 @@
             "./.env"
         ]
     },
+    "symfony/form": {
+        "version": "v4.3.5"
+    },
     "symfony/framework-bundle": {
         "version": "4.2",
         "recipe": {
@@ -130,8 +136,20 @@
     "symfony/http-kernel": {
         "version": "v4.3.5"
     },
+    "symfony/inflector": {
+        "version": "v4.3.5"
+    },
+    "symfony/intl": {
+        "version": "v4.3.5"
+    },
     "symfony/mime": {
         "version": "v4.3.5"
+    },
+    "symfony/options-resolver": {
+        "version": "v4.3.5"
+    },
+    "symfony/polyfill-intl-icu": {
+        "version": "v1.12.0"
     },
     "symfony/polyfill-intl-idn": {
         "version": "v1.12.0"
@@ -144,6 +162,9 @@
     },
     "symfony/polyfill-php73": {
         "version": "v1.12.0"
+    },
+    "symfony/property-access": {
+        "version": "v4.3.5"
     },
     "symfony/routing": {
         "version": "4.2",
@@ -162,6 +183,26 @@
     },
     "symfony/service-contracts": {
         "version": "v1.1.7"
+    },
+    "symfony/translation-contracts": {
+        "version": "v1.1.7"
+    },
+    "symfony/twig-bridge": {
+        "version": "v4.3.5"
+    },
+    "symfony/twig-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "369b5b29dc52b2c190002825ae7ec24ab6f962dd"
+        },
+        "files": [
+            "./config/packages/twig.yaml",
+            "./config/routes/dev/twig.yaml",
+            "./templates/base.html.twig"
+        ]
     },
     "symfony/var-exporter": {
         "version": "v4.3.5"
