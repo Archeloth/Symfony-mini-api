@@ -6,7 +6,6 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use App\Form\MyFormType;
-use Symfony\Component\Form\FormBuilderInterface;
 
 class StringSortController extends AbstractController
 {
@@ -15,6 +14,7 @@ class StringSortController extends AbstractController
      */
     public function StringSortAction(Request $request)
     {
+        //Post-os küldés?
         $return_str = "";
 
         $form = $this->createForm(MyFormType::class);

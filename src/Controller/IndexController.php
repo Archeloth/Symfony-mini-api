@@ -13,4 +13,12 @@ class IndexController extends AbstractController
     {
         return $this->render('index.html.twig');
     }
+
+    /**
+     * @Route("/docs")
+     */
+    public function DocsAction()
+    {
+        return $this->render('docs.html.twig');
+    }
 }

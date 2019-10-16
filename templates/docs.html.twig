@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <section id="random" class="border rounded m-3">
+        <h3>Random</h3>
+        <p>The random function returns a Json file with random integers between 0 and 10 by simply calling  <code>/random</code>.</p>
+        <p>Optionally you can choose how many numbers you want to generate. This is by default 10. If you want a custom sized array then call <code>/random/your_amount</code>.</p>
+    </section>
+
+    <section id="password" class="border rounded m-3">
+        <h3>Password</h3>
+        <p>Password generation easily. By calling the default url (<code>/password</code>) it will return a 12 long string of random hexadecimal characters</p>
+        <p>Options: <code>/password/length</code> if you want to generate a custom length random string, that you can then use as a password.</p>
+        <p>On top of that, if you want to be even more secure, then you could iterate the generation by a certain amount. <code>/password/length/amount_of_iteration</code></p>
+    </section>
+
+    <section id="string" class="border rounded m-3">
+        <h3>String</h3>
+        <p>This function puts the typed in sentences in alphabetic order. <code>/string</code>, which then shows below the field.</p>
+        <p class="font-italic">Its important to note that it currently works only with english letters. Also doesn't distinguish capital and non-capital letters.</p>
+    </section>
+{% endblock %}

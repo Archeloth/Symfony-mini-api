@@ -3,6 +3,17 @@
 {% block title %}Letter ordering{% endblock %}
 
 {% block body %}
-    {{ form(form) }}
-    <p>{{ output }}</p>
+    {{ form_start(form) }}
+<div class="form-row">
+        <div class="col-sm-11">
+            {{ form_widget(form.input, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        
+        <div class="col-sm-1">
+            {{ form_widget(form.submit, {'attr': {'class': 'btn btn-primary'}}) }}
+        </div>
+</div>
+    {{ form_start(form) }}
+
+    <p class="text-wrap font-italic">{{ output }}</p>
 {% endblock %}
