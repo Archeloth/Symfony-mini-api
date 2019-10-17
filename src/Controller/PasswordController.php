@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 class PasswordController
 {
     /**
-     * @Route("/password")
+     * @Route("/password", name="password")
      */
     public static function PasswordAction()
     {

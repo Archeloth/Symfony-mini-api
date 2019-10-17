@@ -39,6 +39,10 @@ class UserController extends AbstractController
      */
     public function UsersAction(): Response
     {
-        return $this->render('users.html.twig');
+        //Fetch all the users from database
+        $repository = $this->getDoctrine()->getRepository(User::class);
+        $users = $repository->findAll();
+
+        return $this->render('users.html.twig', ['users' => $users]);
     }
 }

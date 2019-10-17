@@ -7,7 +7,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class RandomController 
 {
     /**
-     * @Route("/random")
+     * @Route("/random", name="random")
      */
     public function RandomAction()
     {

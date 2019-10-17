@@ -10,7 +10,7 @@ use App\Form\MyFormType;
 class StringSortController extends AbstractController
 {
     /**
-     * @Route("/string")
+     * @Route("/string", name="string")
      */
     public function StringSortAction(Request $request)
     {

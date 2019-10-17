@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ExcelController extends AbstractController
 {
     /**
-     * @Route("/excel")
+     * @Route("/excel", name="excel")
      */
     public function ExcelAction()
     {

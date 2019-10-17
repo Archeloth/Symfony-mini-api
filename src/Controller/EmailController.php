@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 class EmailController
 {
     /**
-     * @Route("/email")
+     * @Route("/email", name="email")
      */
     public function EmailAction(\Swift_Mailer $mailer)
     {
