@@ -7,31 +7,44 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
+use App\Form\NewUserType;
+use Symfony\Component\HttpFoundation\Request;
 
 class UserController extends AbstractController
 {
     /**
-     * @Route("/newUser", name="new_user")
+     * @Route("/users/new", name="new_user")
      */
-    public function newUserAction(ValidatorInterface $validator): Response
+    public function newUserAction(ValidatorInterface $validator, Request $request): Response
     {
-        $entityManager = $this->getDoctrine()->getManager();
+        $form = $this->createForm(NewUserType::class);
 
-        $newUser = new User();
-        $newUser->setName("John Doe");
-        $newUser->setAge(24);
-        $newUser->setJob("Web Developer");
+        $form->handleRequest($request);
 
-        $entityManager->persist($newUser);
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $entityManager = $this->getDoctrine()->getManager();
 
-        $entityManager->flush();
+            $newUser = new User();
+            $newUser->setName($form->get('name')->getData());
+            $newUser->setAge($form->get('age')->getData());
+            $newUser->setJob($form->get('job')->getData());
 
-        $errors = $validator->validate($newUser);
-        if(count($errors) > 0) {
-            return new Response((string) $errors, 400);
+            $entityManager->persist($newUser);
+
+            $entityManager->flush();
+
+            $errors = $validator->validate($newUser);
+            if (count($errors) > 0) {
+                $this->addFlash('error', 'Error while handling data');
+            }
+            else
+            {
+                $this->addFlash('success', 'New user added');
+            }
         }
 
-        return new Response('Saved a new user to the database!');
+        return $this->render('new_user.html.twig', ['form' => $form->createView()]);
     }
 
     /**
@@ -42,7 +55,39 @@ class UserController extends AbstractController
         //Fetch all the users from database
         $repository = $this->getDoctrine()->getRepository(User::class);
         $users = $repository->findAll();
-
         return $this->render('users.html.twig', ['users' => $users]);
+    }
+
+    /**
+     * @Route("/delete/{id}", name="delete")
+     */
+    public function DeleteAction($id)
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $repository = $this->getDoctrine()->getRepository(User::class);
+
+        $user = $repository->find($id);
+
+        $entityManager->remove($user);
+        $entityManager->flush();
+
+        return $this->redirect('/users');
+    }
+
+    /**
+     * @Route("/modify/{id}", name="modify")
+     */
+    public function ModifyAction($id)
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $repository = $this->getDoctrine()->getRepository(User::class);
+
+        $user = $repository->find($id);
+/*
+        $entityManager->remove($user);
+        $entityManager->flush();
+*/
+
+        return $this->redirectToRoute('new_user', ['oldData' => $user]);
     }
 }

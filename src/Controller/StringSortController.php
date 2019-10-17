@@ -14,7 +14,6 @@ class StringSortController extends AbstractController
      */
     public function StringSortAction(Request $request)
     {
-        //Post-os küldés?
         $return_str = "";
 
         $form = $this->createForm(MyFormType::class);
