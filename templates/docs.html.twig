@@ -19,4 +19,17 @@
         <p>This function puts the typed in sentences in alphabetic order. <code>/string</code>, which then shows below the field.</p>
         <p class="font-italic">Its important to note that it currently works only with english letters. Also doesn't distinguish capital and non-capital letters.</p>
     </section>
+
+    <section id="excel" class="border rounded m-3">
+        <h3>Read an excel document into a html table</h3>
+        <p><code>/excel</code>. You have to put an excel (xls/xlsx) file into the public folder and watch the program read it in.</p>
+        <p class="font-italic">For now it has to be 3 column, it will change in the future.</p>
+    </section>
+
+    <section id="user" class="border rounded m-3">
+        <h3>Users in database</h3>
+        <p>Using the Doctrine ORM you can create new users to a local mySql database. Simply navigate to <code>/user</code>, and add, query or modify the users.</p>
+        <p class="font-italic">Before you use this you have to run <code>php bin/console doctine:schema:create</code>.</p>
+    </section>
+
 {% endblock %}

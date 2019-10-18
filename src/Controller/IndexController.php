@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class IndexController extends AbstractController
 {   
     /**
-     * @Route("/")
+     * @Route("/", name="index")
      */
     public function IndexAction()
     {
@@ -15,10 +15,18 @@ class IndexController extends AbstractController
     }
 
     /**
-     * @Route("/docs")
+     * @Route("/docs", name="docs")
      */
     public function DocsAction()
     {
         return $this->render('docs.html.twig');
+    }
+
+    /**
+     * @Route("/functions", name="functions")
+     */
+    public function FunctionsAction()
+    {
+        return $this->render('functions.html.twig');
     }
 }

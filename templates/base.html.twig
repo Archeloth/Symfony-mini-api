@@ -5,21 +5,22 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <script src="https://kit.fontawesome.com/f0c6b7376a.js" crossorigin="anonymous"></script>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="/">Symfony API</a>
+            <a class="navbar-brand" href={{ path('index') }}>Symfony API</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Functions</a>
+                        <a class="nav-link" href={{ path('functions') }}>Functions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/docs">Docs</a>
+                        <a class="nav-link" href={{ path('docs') }}>Docs</a>
                     </li>
                 </ul>
             </div>

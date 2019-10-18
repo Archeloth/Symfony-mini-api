@@ -87,7 +87,7 @@ class UserController extends AbstractController
         $entityManager->remove($user);
         $entityManager->flush();
 */
-
-        return $this->redirectToRoute('new_user', ['oldData' => $user]);
+//Problems here ->
+        return $this->redirectToRoute('new_user');
     }
 }

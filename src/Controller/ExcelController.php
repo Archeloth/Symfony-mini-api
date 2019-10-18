@@ -14,6 +14,7 @@ class ExcelController extends AbstractController
     public function ExcelAction()
     {
         $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
+        //Reads from public folder, outputs an ordered array of each row
         $spreadsheet = $reader->load('test.xlsx')->getActiveSheet()->toArray();
         return $this->render('excel.html.twig', ['data' => $spreadsheet]);
     }

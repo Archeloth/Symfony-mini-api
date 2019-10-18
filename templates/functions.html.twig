@@ -1,0 +1,45 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Index{% endblock %}
+
+{% block body %}
+<p>Here are the implemented functions: </p>
+<ul>
+    <li>
+        <a href={{ path('random') }}>Json array of random numbers</a>
+        <a href="{{ path('docs') }}#random">
+            <i class="far fa-question-circle"></i>
+        </a>
+    </li>
+    <li>
+        <a href={{ path('password') }}>Password generator</a>
+        <a href="{{ path('docs') }}#password">
+            <i class="far fa-question-circle"></i>
+        </a>
+    </li>
+    <li>
+        <a href={{ path('string') }}>Letter ordering sentences</a>
+        <a href="{{ path('docs') }}#string">
+            <i class="far fa-question-circle"></i>
+        </a>
+    </li>
+    <li>
+        <a href={{ path('excel') }}>Read local excel document</a>
+        <a href="{{ path('docs') }}#excel">
+            <i class="far fa-question-circle"></i>
+        </a>
+    </li>
+    <li>
+        Send an email with SwiftMail
+        <a href="{{ path('docs') }}#email">
+            <i class="far fa-question-circle"></i>
+        </a>
+    </li>
+    <li>
+        <a href={{ path('all_users') }}>View the database of the users.</a>
+        <a href="{{ path('docs') }}#user">
+            <i class="far fa-question-circle"></i>
+        </a>
+    </li>
+</ul>
+{% endblock %}

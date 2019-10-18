@@ -16,13 +16,16 @@ class StringSortController extends AbstractController
     {
         $return_str = "";
 
+        //Create the form
         $form = $this->createForm(MyFormType::class);
+        //The form handles the submitted requests
         $form->handleRequest($request);
 
+        //Handles the typed in text and makes an array out of it
         $test_sentence = $form->get('input')->getData();
-        
-        $test_sentence = mb_strtolower($test_sentence, 'UTF-8');
+        $test_sentence = mb_strtolower($test_sentence, 'UTF-8');//(Sorting only works strictly on lower or upper cased strings)
         $test_sentence = explode(' ',$test_sentence);
+
         foreach($test_sentence as $test_word)
         {
             $test_word = WordSort::WordSort($test_word);
@@ -34,10 +37,11 @@ class StringSortController extends AbstractController
 
 class WordSort
 {
+    //Orders the parameter string in alphabetic order
     public static function WordSort(string $word)
     {
         mb_internal_encoding('UTF-8');
-        $str_array = str_split($word);;
+        $str_array = str_split($word);
         sort($str_array);
         $str = implode('', $str_array);
         

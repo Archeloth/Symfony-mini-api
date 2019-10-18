@@ -39,7 +39,6 @@ class PasswordController
             {
                 $generated_seed = md5($generated_seed);
             }
-             
             return new Response(substr($generated_seed ,0 , $length));
         }
         else

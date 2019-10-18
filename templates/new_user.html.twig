@@ -11,11 +11,11 @@
     {% endfor %}
     </div>
     {{ form_start(form) }}
-        {{ form_widget(form.name, {'attr': {'class': 'form-control', 'placeholder': 'Name', 'value': oldData.name|length > 0 ? oldData.name : ''}}) }}
+        {{ form_widget(form.name, {'attr': {'class': 'form-control', 'placeholder': 'Name'}}) }}
 
-        {{ form_widget(form.age, {'attr': {'class': 'form-control', 'placeholder': 'Age' , 'value': oldData.age|length > 0 ? oldData.age : ''}}) }}
+        {{ form_widget(form.age, {'attr': {'class': 'form-control', 'placeholder': 'Age'}}) }}
 
-        {{ form_widget(form.job, {'attr': {'class': 'form-control', 'placeholder': 'Job', 'value': oldData.job|length > 0 ? oldData.job : ''}}) }}
+        {{ form_widget(form.job, {'attr': {'class': 'form-control', 'placeholder': 'Job'}}) }}
 
         {{ form_widget(form.submit, {'attr': {'class': 'btn btn-primary'}}) }}
     {{ form_end(form) }}
